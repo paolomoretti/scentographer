@@ -1,0 +1,49 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+html {
+  width: 100%;
+  height: 100%;
+}
+html body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+html body .wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+html body .wrapper .video-player {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+html body .wrapper .container {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  position: relative;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+html body .wrapper .container h2 {
+  color: #fff;
+}
+html.stop .container {
+  background-color: #000000;
+}
+header h1 {
+  margin: 0;
+  padding: 30px;
+  color: #ffffff;
+}
