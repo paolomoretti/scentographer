@@ -1,0 +1,46 @@
+@import "elements";
+@import "variables";
+
+html {
+  width: 100%;
+  height: 100%;
+
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      .video-player {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: @zindex-videoplayer;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+        z-index: @zindex-container;
+        position: relative;
+        .transition(1s);
+
+        h2 {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &.stop {
+    .container {
+      background-color: @color-black;
+    }
+  }
+}
