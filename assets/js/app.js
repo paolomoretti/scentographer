@@ -7,3 +7,17 @@ stop = function() {
     return $("iframe").remove();
   }, 1000);
 };
+
+$(document).ready(function() {
+  if ($("html").is(".index")) {
+    console.log("----");
+    $("#main-region").css("opacity", 1);
+    return setTimeout(function() {
+      return $("header").css({
+        top: "20px",
+        left: "125px",
+        color: "#333"
+      });
+    }, 2000);
+  }
+});
