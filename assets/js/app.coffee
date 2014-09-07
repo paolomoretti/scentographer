@@ -9,7 +9,7 @@ stop = ->
 $(document).ready ->
   if $("html").is ".index"
 
-    $(".img-loader").on "load", ->
+    setTimeout ->
       $("#main-region").css "opacity", 1
 
       setTimeout ->
@@ -18,3 +18,4 @@ $(document).ready ->
           left    : "125px"
           color   : "#333"
       , 2000
+    , 1500

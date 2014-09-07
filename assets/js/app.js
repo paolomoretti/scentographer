@@ -10,7 +10,7 @@ stop = function() {
 
 $(document).ready(function() {
   if ($("html").is(".index")) {
-    return $(".img-loader").on("load", function() {
+    return setTimeout(function() {
       $("#main-region").css("opacity", 1);
       return setTimeout(function() {
         return $("header").css({
@@ -19,6 +19,6 @@ $(document).ready(function() {
           color: "#333"
         });
       }, 2000);
-    });
+    }, 1500);
   }
 });
