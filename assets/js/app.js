@@ -8,17 +8,24 @@ stop = function() {
   }, 1000);
 };
 
+$("navigation li a").on("click", function(event) {
+  $("html").toggleClass("with-overlay");
+  $(event.currentTarget).parents("li:first").toggleClass("active");
+  return $(event.currentTarget).parents("navigation").toggleClass($(event.currentTarget).text());
+});
+
 $(document).ready(function() {
   if ($("html").is(".index")) {
     return setTimeout(function() {
-      $("#main-region").css("opacity", 1);
-      return setTimeout(function() {
-        return $("header").css({
-          top: "20px",
-          left: "125px",
-          color: "#333"
-        });
+      $("#main-region").addClass("show");
+      setTimeout(function() {
+        return $("html").addClass("loaded");
       }, 2000);
+      return setTimeout(function() {
+        return $("navigation").css({
+          opacity: 1
+        });
+      }, 3000);
     }, 1500);
   }
 });

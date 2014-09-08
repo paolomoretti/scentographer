@@ -10,11 +10,9 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 40%;
       z-index: 10;
-      margin: 0 0 0 -20%;
+      margin: 0 0 0 -90px;
       padding: 0;
-      text-align: center;
       font-size: 21px;
       letter-spacing: 2px;
       font-weight: 300;
@@ -31,14 +29,111 @@
       background: url(../images/bg-dungenes.jpg) no-repeat center center;
       background-size: cover;
       opacity: 0;
+      .transition(2s);
 
-      .transition-single(opacity, 2s);
+      &.show {
+        opacity: 1;
+      }
     }
 
     .img-loader {
       position: absolute;
       bottom: 2000px;
       left: 2000px;
+    }
+
+    navigation {
+      .transition-single(opacity, .3s);
+      .transition-single(top, .3s);
+      position: absolute;
+      left: 24px;
+      z-index: 15;
+      top: 69px;
+      opacity: 0;
+
+      ul {
+        li {
+          a {
+            text-decoration: none;
+            .transition(.3s);
+            .transition-single(color, .1s);
+
+            &:hover {
+              color: #fff;
+            }
+          }
+          p {
+            .transition-single(max-height, .3s);
+            overflow: hidden;
+            max-height: 0;
+            background: rgba(0, 0, 0, .6);
+            color: #eee;
+            max-width: 400px;
+            margin-top: 20px;
+            margin-right: 25px;
+
+            span {
+              display: block;
+              padding: 15px;
+              color: #ccc;
+              font-weight: 300;
+              line-height: 23px;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.loaded {
+    body {
+
+      header {
+        top: 20px;
+        left: 24px;
+        color: #333;
+        width: 100%;
+        margin: 0;
+      }
+
+      #main-region {
+        .transition(.3s);
+      }
+    }
+  }
+
+
+  &.with-overlay {
+    body {
+
+      header {
+        top: -40px;
+      }
+
+      section#main-region {
+        .blur(8px);
+        opacity: .7;
+      }
+
+      navigation {
+        top: 20px;
+
+        li.active {
+          a {
+            top: 20px;
+            font-size: 25px;
+            color: @color-white;
+          }
+          p {
+            max-height: 600px;
+          }
+        }
+
+        &.Player {
+          top: -16px;
+        }
+      }
     }
   }
 }

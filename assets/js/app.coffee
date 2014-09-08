@@ -6,16 +6,23 @@ stop = ->
   , 1000
 
 
+$("navigation li a").on "click", (event)->
+  $("html").toggleClass "with-overlay"
+  $(event.currentTarget).parents("li:first").toggleClass "active"
+  $(event.currentTarget).parents("navigation").toggleClass $(event.currentTarget).text()
+
 $(document).ready ->
   if $("html").is ".index"
 
     setTimeout ->
-      $("#main-region").css "opacity", 1
+      $("#main-region").addClass "show"
 
       setTimeout ->
-        $("header").css
-          top     : "20px"
-          left    : "125px"
-          color   : "#333"
+        $("html").addClass "loaded"
       , 2000
+
+      setTimeout ->
+        $("navigation").css
+          opacity: 1;
+      , 3000
     , 1500
