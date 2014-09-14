@@ -11,7 +11,15 @@ stop = function() {
 $("navigation li a").on("click", function(event) {
   $("html").toggleClass("with-overlay");
   $(event.currentTarget).parents("li:first").toggleClass("active");
-  return $(event.currentTarget).parents("navigation").toggleClass($(event.currentTarget).text());
+  $(event.currentTarget).parents("navigation").toggleClass($(event.currentTarget).text());
+  if ($(event.currentTarget).parents("li:first").is(".active")) {
+    return setTimeout(function() {
+      return $("body").off("click").on("click", function() {
+        $("navigation li.active a").click();
+        return $("body").off("click");
+      });
+    }, 500);
+  }
 });
 
 $(document).ready(function() {

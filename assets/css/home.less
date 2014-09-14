@@ -13,11 +13,10 @@
       z-index: 10;
       margin: 0 0 0 -90px;
       padding: 0;
-      font-size: 21px;
-      letter-spacing: 2px;
-      font-weight: 300;
+      font-size: 31px;
+      font-weight: 200;
       color: #fff;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: @base-font;
     }
 
     section#main-region {
@@ -48,12 +47,13 @@
       position: absolute;
       left: 24px;
       z-index: 15;
-      top: 69px;
+      top: 90px;
       opacity: 0;
 
       ul {
         li {
           a {
+            font-size: 23px;
             text-decoration: none;
             .transition(.3s);
             .transition-single(color, .1s);
@@ -68,7 +68,7 @@
             max-height: 0;
             background: rgba(0, 0, 0, .6);
             color: #eee;
-            max-width: 400px;
+            max-width: 70%;
             margin-top: 20px;
             margin-right: 25px;
 
@@ -77,8 +77,10 @@
               padding: 15px;
               color: #ccc;
               font-weight: 300;
-              line-height: 23px;
-              font-size: 14px;
+              line-height: 30px;
+              font-size: 24px;
+              letter-spacing: 0px;
+              text-align: justify;
             }
           }
         }

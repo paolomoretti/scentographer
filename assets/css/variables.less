@@ -1,5 +1,14 @@
 // Fonts
-@base-font  : "Arial";
+@path-fonts: "../fonts";
+@font-face {
+  font-family: 'din';
+  src:  url("@{path-fonts}/din-1451-engschrift.eot")  format('enbedded-opentype'),
+        url('@{path-fonts}/din-1451-engschrift.woff') format('woff'),
+        url('@{path-fonts}/din-1451-engschrift.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@base-font  : "din";
 
 // Z-indexes
 @zindex-container:      2;

@@ -11,6 +11,14 @@ $("navigation li a").on "click", (event)->
   $(event.currentTarget).parents("li:first").toggleClass "active"
   $(event.currentTarget).parents("navigation").toggleClass $(event.currentTarget).text()
 
+  if $(event.currentTarget).parents("li:first").is ".active"
+
+    setTimeout ->
+      $("body").off("click").on "click", ->
+        do $("navigation li.active a").click
+        $("body").off "click"
+    , 500
+
 $(document).ready ->
   if $("html").is ".index"
 

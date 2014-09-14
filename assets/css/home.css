@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'din';
+  src: url("../fonts/din-1451-engschrift.eot") format('enbedded-opentype'), url('../fonts/din-1451-engschrift.woff') format('woff'), url('../fonts/din-1451-engschrift.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 html,
 body,
 div,
@@ -85,7 +91,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: "Arial";
+  font-family: "din";
   color: #333333;
 }
 /* HTML5 display-role reset for older browsers */
@@ -144,11 +150,10 @@ table {
   z-index: 10;
   margin: 0 0 0 -90px;
   padding: 0;
-  font-size: 21px;
-  letter-spacing: 2px;
-  font-weight: 300;
+  font-size: 31px;
+  font-weight: 200;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "din";
 }
 .index body section#main-region {
   position: absolute;
@@ -184,10 +189,11 @@ table {
   position: absolute;
   left: 24px;
   z-index: 15;
-  top: 69px;
+  top: 90px;
   opacity: 0;
 }
 .index body navigation ul li a {
+  font-size: 23px;
   text-decoration: none;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -210,7 +216,7 @@ table {
   max-height: 0;
   background: rgba(0, 0, 0, 0.6);
   color: #eee;
-  max-width: 400px;
+  max-width: 70%;
   margin-top: 20px;
   margin-right: 25px;
 }
@@ -219,8 +225,10 @@ table {
   padding: 15px;
   color: #ccc;
   font-weight: 300;
-  line-height: 23px;
-  font-size: 14px;
+  line-height: 30px;
+  font-size: 24px;
+  letter-spacing: 0px;
+  text-align: justify;
 }
 .index.loaded body header {
   top: 20px;
