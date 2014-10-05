@@ -152,12 +152,32 @@ html body .wrapper {
   position: relative;
 }
 html body .wrapper .video-player {
-  width: 100%;
-  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 1;
+  opacity: 0;
+}
+html body .wrapper .video-player .video-back {
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+  position: fixed;
+  color: #ffffff;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  padding: 10px;
+  z-index: 10;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: .3;
+}
+html body .wrapper .video-player .video-back:hover {
+  opacity: 1;
 }
 html body .wrapper .container {
   width: 100%;
@@ -172,8 +192,56 @@ html body .wrapper .container {
 html body .wrapper .container h2 {
   color: #fff;
 }
-html.stop .container {
-  background-color: #000000;
+html.player {
+  background-color: #000;
+}
+html.player section.slide {
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #000;
+  -webkit-transition: opacity 1s ease-out;
+  -moz-transition: opacity 1s ease-out;
+  -o-transition: opacity 1s ease-out;
+  transition: opacity 1s ease-out;
+}
+html.player section.slide.show {
+  opacity: 1;
+}
+html.player section.slide.slide-1 h1 {
+  color: #fff;
+  font-size: 6vmax;
+  text-align: center;
+  margin-top: 47vmin;
+}
+html.player section.slide.slide-2 {
+  z-index: 2;
+  right: auto;
+  bottom: auto;
+}
+html.player section.slide.slide-2 a {
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #fff;
+  opacity: .2;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #000;
+}
+html.player section.slide.slide-2 a:hover {
+  opacity: 1;
+}
+html.player section.slide.slide-2.show {
+  background-color: transparent;
 }
 .index body {
   background: #000;
@@ -265,7 +333,7 @@ html.stop .container {
   color: #ccc;
   font-weight: 300;
   line-height: 30px;
-  font-size: 24px;
+  font-size: 21px;
   letter-spacing: 0px;
   text-align: justify;
 }
