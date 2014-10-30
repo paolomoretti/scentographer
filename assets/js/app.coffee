@@ -7,17 +7,20 @@ stop = ->
 
 
 $("navigation li a").on "click", (event)->
-  $("html").toggleClass "with-overlay"
-  $(event.currentTarget).parents("li:first").toggleClass "active"
-  $(event.currentTarget).parents("navigation").toggleClass $(event.currentTarget).text()
+  link = $(event.currentTarget)
 
-  if $(event.currentTarget).parents("li:first").is ".active"
+  if link.next().is "p"
+    $("html").toggleClass "with-overlay"
+    $(event.currentTarget).parents("li:first").toggleClass "active"
+    $(event.currentTarget).parents("navigation").toggleClass $(event.currentTarget).text()
 
-    setTimeout ->
-      $("body").off("click").on "click", ->
-        do $("navigation li.active a").click
-        $("body").off "click"
-    , 500
+    if $(event.currentTarget).parents("li:first").is ".active"
+
+      setTimeout ->
+        $("body").off("click").on "click", ->
+          do $("navigation li.active a").click
+          $("body").off "click"
+      , 500
 
 $(document).ready ->
   if $("html").is ".index"

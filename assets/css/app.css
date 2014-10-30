@@ -363,6 +363,9 @@ html.player section.slide.slide-2.show {
 .index.with-overlay body navigation {
   top: 20px;
 }
+.index.with-overlay body navigation li.active {
+  padding-bottom: 20px;
+}
 .index.with-overlay body navigation li.active a {
   top: 20px;
   font-size: 25px;

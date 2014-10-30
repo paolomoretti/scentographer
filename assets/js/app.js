@@ -9,16 +9,20 @@ stop = function() {
 };
 
 $("navigation li a").on("click", function(event) {
-  $("html").toggleClass("with-overlay");
-  $(event.currentTarget).parents("li:first").toggleClass("active");
-  $(event.currentTarget).parents("navigation").toggleClass($(event.currentTarget).text());
-  if ($(event.currentTarget).parents("li:first").is(".active")) {
-    return setTimeout(function() {
-      return $("body").off("click").on("click", function() {
-        $("navigation li.active a").click();
-        return $("body").off("click");
-      });
-    }, 500);
+  var link;
+  link = $(event.currentTarget);
+  if (link.next().is("p")) {
+    $("html").toggleClass("with-overlay");
+    $(event.currentTarget).parents("li:first").toggleClass("active");
+    $(event.currentTarget).parents("navigation").toggleClass($(event.currentTarget).text());
+    if ($(event.currentTarget).parents("li:first").is(".active")) {
+      return setTimeout(function() {
+        return $("body").off("click").on("click", function() {
+          $("navigation li.active a").click();
+          return $("body").off("click");
+        });
+      }, 500);
+    }
   }
 });
 
