@@ -245,6 +245,7 @@ html.player section.slide.slide-2.show {
 }
 .index body {
   background: #000;
+  overflow: hidden;
 }
 .index body header {
   -webkit-transition: all 0.6s ease-out;

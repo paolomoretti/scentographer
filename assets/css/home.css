@@ -138,6 +138,7 @@ table {
   ---------------------------------------------------*/
 .index body {
   background: #000;
+  overflow: hidden;
 }
 .index body header {
   -webkit-transition: all 0.6s ease-out;
