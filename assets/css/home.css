@@ -193,7 +193,7 @@ table {
   top: 90px;
   opacity: 0;
 }
-.index body navigation ul li a {
+.index body navigation ul li > a {
   font-size: 23px;
   text-decoration: none;
   -webkit-transition: all 0.3s ease-out;
@@ -205,7 +205,7 @@ table {
   -o-transition: color 0.1s ease-out;
   transition: color 0.1s ease-out;
 }
-.index body navigation ul li a:hover {
+.index body navigation ul li > a:hover {
   color: #fff;
 }
 .index body navigation ul li p {
@@ -230,6 +230,16 @@ table {
   font-size: 21px;
   letter-spacing: 0px;
   text-align: justify;
+}
+.index body navigation ul li p span a {
+  color: #fff;
+  font-size: .9em;
+  font-weight: 300;
+  text-decoration: none;
+}
+.index body navigation ul li p span strong {
+  font-weight: 400;
+  color: #fefefe;
 }
 .index.loaded body header {
   top: 20px;
