@@ -303,6 +303,7 @@ html.player section.slide.slide-2.show {
 .index body navigation ul li > a {
   font-size: 23px;
   text-decoration: none;
+  color: #fff;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
