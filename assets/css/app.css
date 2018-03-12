@@ -84,7 +84,12 @@ header {
   text-align: center;
 }
 header h1 {
-  font-family: 'IM Fell DW Pica SC', serif;
+  /*font-family: 'IM Fell DW Pica SC', serif;*/
+  /*font-family: 'Open Sans Condensed', sans-serif;*/
+  /*font-family: 'Yanone Kaffeesatz', sans-serif;*/
+  /*font-family: 'Amatic SC', cursive;*/
+  font-family: 'Barlow Condensed', sans-serif;
+
   color: #fff;
   font-size: 40px;
   margin: 0 auto;
@@ -107,7 +112,7 @@ navigation ul li.active a {
 }
 
 navigation ul li a {
-  font-family: 'IM Fell DW Pica SC', serif;
+  font-family: 'Barlow Condensed', sans-serif;
   color: #fff;
   font-size: 16px;
   text-decoration: none;
@@ -145,7 +150,7 @@ navigation ul li a:hover {
   background: rgba(255, 255, 255, 0.35);
 }
 .video-container h3 {
-  font-family: 'IM Fell DW Pica SC', serif;
+  font-family: 'Barlow Condensed', sans-serif;
   color: #fff;
   font-size: 20px;
   text-transform: uppercase;

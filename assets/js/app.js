@@ -47,4 +47,8 @@
 //   }, 3000);
 // }, 500);
 
-console.log('test');
+var style = document.createElement('link');
+style.href = "https://fonts.googleapis.com/css?family=Barlow+Condensed";
+style.rel = "stylesheet";
+
+document.head.appendChild(style);
