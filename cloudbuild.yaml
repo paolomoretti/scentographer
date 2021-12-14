@@ -1,5 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ["rsync", "-m", "-r", "-c", "-d", "./build", "gs://new.scentographers.com"]
+  args: ["-m", "rsync", "-r", "-c", "-d", "./build", "gs://new.scentographers.com"]
 options:
   logging: CLOUD_LOGGING_ONLY
