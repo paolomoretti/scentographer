@@ -32,7 +32,7 @@
   }
   .videos-container .video {
     width: 50%;
-    min-width: 500px;
+    /*min-width: 500px;*/
     padding-bottom: calc(var(--size-app-padding) / 2);
   }
   .videos-container .video:nth-child(odd) {
@@ -43,5 +43,11 @@
   }
   .video img {
     width: 100%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .videos-container .video {
+      width: 100%;
+    }
   }
 </style>
