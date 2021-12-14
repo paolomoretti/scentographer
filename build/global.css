@@ -1,4 +1,4 @@
-@import url(//db.onlinewebfonts.com/c/da950f2527dc01bebcbedd536e38c145?family=Futura);
+@import url(https://db.onlinewebfonts.com/c/da950f2527dc01bebcbedd536e38c145?family=Futura);
 
 :root {
   --font-title: Futura;
@@ -9,6 +9,7 @@
   --size-title: 3.5em;
   --size-max-app-content: 1000;
   --size-app-padding: 7vw;
+  --size-responsive-mobile: 800px;
 }
 * {
   color: var(--color-text);

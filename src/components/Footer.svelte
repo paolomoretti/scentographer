@@ -1,5 +1,5 @@
 <footer>
-  <p>Scentographers footer</p>
+  <p>Scentographers footer!</p>
 </footer>
 
 <style>
