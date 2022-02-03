@@ -2,12 +2,11 @@
   import {page} from "$app/stores";
   const pathFinder = (path) => path.split('/')[1];
 
-  $: selected = $page.path === '/' ? undefined : pathFinder($page.path);
+  $: selected = $page.url.pathname === '/' ? undefined : pathFinder($page.url.pathname);
   $: hasSelection = !!selected;
 
   const navItems: Array<NavigationItem> = [
     { name: 'The project', path: '/the-project'},
-    { name: 'Videos', path: '/videos'},
     { name: 'Contacts', path: '/contacts'}
   ]
 </script>
@@ -22,37 +21,29 @@
 
 <style>
   ul {
-    display: flex;
     justify-content: space-between;
     align-content: center;
-    max-width: 600px;
-    margin: 10vmax auto;
-    padding: 0 var(--size-app-padding);
-  }
-  li {
-    display: inline-block;
-  }
-  nav.hasSelection ul {
     display: block;
     max-width: var(--size-max-app-content);
     margin: 0 auto;
     padding: 0 var(--size-app-padding);
     align-items: baseline;
   }
-  nav.hasSelection ul li {
+  li {
+    display: inline-block;
     padding-right: var(--size-app-padding);
     filter: brightness(50%);
   }
-  nav.hasSelection ul li:last-child {
+  ul li:last-child {
     padding-right: 0;
   }
-  nav.hasSelection ul li.selected {
+  ul li.selected {
     filter: none;
     font-size: 1.2em;
   }
 
   @media only screen and (max-width: 800px) {
-    nav.hasSelection ul {
+    ul {
       display: flex;
     }
   }

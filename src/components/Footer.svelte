@@ -1,5 +1,5 @@
 <footer>
-  <p>Scentographers footer!</p>
+  <p>Scentographers 2014</p>
 </footer>
 
 <style>
@@ -9,5 +9,8 @@
     align-items: center;
     width: 100%;
     justify-content: center;
+  }
+  footer p {
+    font-size: .8em;
   }
 </style>
