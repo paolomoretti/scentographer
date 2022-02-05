@@ -14,7 +14,7 @@
   <FullContent>
     <VideosNavigation />
     <div class="video-frame-container">
-      <iframe id="yt_player" name="player" width="100%" height="100%" src={video.src} frameborder="0"></iframe>
+      <iframe title={video.name} id="player" name="player" width="100%" height="100%" src={video.src} frameborder="0"></iframe>
       <p class="loader">loading...</p>
     </div>
     <p class="description">{video.memories}</p>
