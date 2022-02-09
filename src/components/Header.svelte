@@ -11,8 +11,14 @@
     align-items: center;
     width: 100%;
     justify-content: center;
+    background-color: white;
   }
   h1 {
     font-size: var(--size-title);
+  }
+  @media only screen and (max-width: 800px) {
+    header {
+      height: calc(var(--size-title) * 2);
+    }
   }
 </style>

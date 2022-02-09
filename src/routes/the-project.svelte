@@ -7,27 +7,16 @@
 <App>
   <MainNavigation />
   <FullContent>
-    <p>
-      Paolo Moretti: audio recordings and sound mashup.<br>
-      Sara Xiayu: photography and video editing
-    </p>
-    <p>
-      Sense of smell has always had quite an impact on our memories. <br>
-      Whether a unique scent of a person or an odor connected to a particular place or situation, smell is something kept and recorded deep inside each of us.
-      <br>
-      And unlike sight and hearing, there’s no tool to play it back.
-    </p>
-    <p>
-      Scentographers is an attempt to play, record and store memories of odor in digital videos.
-    </p>
-    <p>
-      All images are taken where smells are sensed, then processed and edited suiting the smell feeling.
-    </p>
-    <p>
-      Audio is field-recorded during the photo shooting process in real time. <br>
-      Every sample is used as an ambient generator, filtered and played with resonators to recreate the specific and unique feeling the odor has.
-      <br>
-      No extraneous audio samples are used in order to keep a faithful representation.
-    </p>
+    <p>Scentographers is Paolo Moretti and Sara Xiayu and it is an attempt to record and archive scents.</p>
+    <p>Odours are chemical molecules and they are detected when they touch our olfactory epithelium (a small patch of
+      tissue at the back of our noses).</p>
+    <p>They are so much more than that though: they can almost be psychic triggers to re-evoking past experiences. When
+      scents are detected, our brain can instantly evoke emotions and feelings that belong to specific memories.</p>
+    <p>Sadly, tools to store odours and play them back are yet to exist.</p>
+
+    <p>Scentographers is our own personal device to store and play memories of scents.</p>
+    <p>Each scent is stored and reproduced as a digital video.</p>
+    <p>All images are shot where the scent is sensed, then processed, filtered and edited in a video according to the scent cues.</p>
+    <p>All sounds are field-recorded in real time during the photo-shooting; sound samples are then used as an ambient generator, filtered through resonators, delays and other effects according to the scent features.</p>
   </FullContent>
 </App>

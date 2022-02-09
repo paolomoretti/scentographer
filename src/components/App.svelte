@@ -11,9 +11,8 @@
 
 <style>
   .app {
-    height: 100%;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    background: url("/images/background.jpg") no-repeat center center;
-    background-size: cover;
   }
 </style>

@@ -8,11 +8,12 @@ export default <Array<VideoContent>>[
       photo: 'Nikon D610',
       audio: 'Zoom H1'
     },
-    cover: 'https://i.ytimg.com/vi_webp/VmD_VdVaKVI/maxresdefault.webp',
-    src: 'https://www.youtube.com/embed/VmD_VdVaKVI?rel=0&showinfo=0&autohide=1&modestbranding=1&rel=0&autoplay=0&vq=hd1080',
+    cover: '/images/smell-5.jpg',
+    src: 'https://www.youtube.com/watch?v=H6kqAf7RCsQ&ab_channel=Scentographers',
     memories: `Our noses were permeated by the incense burnt in Koyasan settlement; we were almost wrapped by a resinous and woody layer that insulated and sealed a hieratic experience.
 That felt like some sort of holy initiation to prime our nose to the intense benzene smell we sensed  on a boat tour around Yokohama’s port. The pungent odour from hydrocarbons, antifreeze, lots of different chemical compounds and, of course, benzene, had a suppressing effect that buzzed with our indulgence.`,
-    year: 2018
+    year: 2021,
+    just_added: true
   },
   {
     index: 3,
