@@ -27,7 +27,7 @@
         <p>All images are shot where the scent is sensed, then processed, filtered and edited in a video according to the scent cues.</p>
         <p align="right"><a href="/the-project"><strong>Read more ...</strong></a></p>
       </div>
-      <div class="content">
+      <div class="content" on:click={() => openVideo(lastVideo)}>
         <h5 class="scent-label">Scent</h5>
         <h3 class="title">{lastVideo.name}<small>{lastVideo.year}</small></h3>
         <p>
@@ -113,6 +113,11 @@
     background-color: #F16B6C;
     background-image: linear-gradient(0deg, #2A1A4B, #F16B6C);
     max-width: 400px;
+    transition: filter .3s;
+  }
+  .latest-video .content:hover {
+    cursor: pointer;
+    filter: sepia(.8);
   }
   .latest-video .content h3 {
     font-size: 1.7em;
