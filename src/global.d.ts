@@ -16,5 +16,6 @@ interface VideoContent {
   src: string;
   memories: string;
   year: number;
+  videoId: string;
   maps?: Array<string>;
 }

@@ -2,91 +2,109 @@
   import {page} from "$app/stores";
   import videos from "./videos-content";
   import App from "../../components/App.svelte";
-  import MainNavigation from "../../components/navigations/MainNavigation.svelte";
   import FullContent from "../../components/FullContent.svelte";
-  import VideosNavigation from "../../components/navigations/VideosNavigation.svelte";
+  import Header from "../../components/Header.svelte";
+  import Player from "../../components/Player.svelte";
+  import Footer from "../../components/Footer.svelte";
 
+  let showVideo = false;
   $: video = videos.find(v => v.name.toLowerCase().replace(/\s/gi, '-') === $page.params.name) as VideoContent;
+
+  const playVideo = () => showVideo = true;
+  const onClose = () => showVideo = false;
 </script>
 
 <App>
-  <MainNavigation />
-  <FullContent>
-    <VideosNavigation />
-    <div class="video-frame-container">
-      <iframe title={video.name} id="player" name="player" width="100%" height="100%" src={video.src} frameborder="0"></iframe>
-      <p class="loader">loading...</p>
-    </div>
-    <p class="description">{video.memories}</p>
-    <table>
-      <tr>
-        <td colspan="2"><h3>Shooting and recording location</h3></td>
-      </tr>
-      <tr>
-        <td colspan="2" style="padding: 0">
-          {#if video.maps && video.maps.length > 0}
-            <div class="maps-container">
-              {#each video.maps as map (map)}
-                <div>
-                  <img class="location-map" src={map} alt={`${video.name} map`} />
-                </div>
-              {/each}
-            </div>
-          {/if}
-          <strong>{video.year}</strong> - {video.shooting_location}, <u>{video.location}</u>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2"><h3>Equipment</h3></td>
-      </tr>
-      <tr>
-        <td><strong>Photo shooting</strong></td>
-        <td>{video.equipment.photo}</td>
-      </tr>
-      <tr>
-        <td><strong>Audio recording</strong></td>
-        <td width="100%">{video.equipment.audio}</td>
-      </tr>
-    </table>
-  </FullContent>
+<!--  <div>-->
+    <Header compact={true} />
+    {#if showVideo}
+      <Player video={video} onClose={onClose} />
+    {:else}
+      <FullContent>
+        <div class="video-content">
+          <div class="content">
+            <h2 class="title">{video.name}</h2>
+
+            <h4 class="title sub-title">Location</h4>
+            <p>
+              <strong>{video.year}</strong> - {video.shooting_location}, <u>{video.location}</u>
+            </p>
+
+            <h4 class="title sub-title">Our memories</h4>
+            <p class="description">{video.memories}</p>
+
+            <h4 class="title sub-title">Equipment</h4>
+            <table>
+              <tr>
+                <td><strong>Photo shooting</strong></td>
+                <td>{video.equipment.photo}</td>
+              </tr>
+              <tr>
+                <td><strong>Audio recording</strong></td>
+                <td width="100%">{video.equipment.audio}</td>
+              </tr>
+            </table>
+
+          </div>
+          <div class="preview">
+            <img src={video.cover} alt={video.name} />
+            <button class="play-btn title" on:click={playVideo}>Play</button>
+          </div>
+        </div>
+      </FullContent>
+    {/if}
+    <Footer />
+<!--  </div>-->
 </App>
 
 <style>
-  .video-frame-container {
+  .video-content {
+    background-color: var(--color-highlight);
+    padding: 2em;
     position: relative;
-    padding-top: 60%;
+    z-index: 10;
+    display: flex;
+    gap: 2em;
   }
-  iframe {
+  .video-content .title {
+    margin: 0;
+  }
+  .video-content .sub-title {
+    margin-top: 1.5em;
+    color: var(--color-dark);
+  }
+  .video-content .content {
+    flex: 1;
+  }
+  .video-content .preview {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  .video-content .preview img {
     position: absolute;
     height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
   }
-  .loader {
+  .video-content .preview .play-btn {
     position: absolute;
-    z-index: 1;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-color: var(--color-highlight);
+    padding: .4em 1.2em;
+    border: none;
+    border-radius: .5em;
+    opacity: .7;
+    transition: opacity, .3s;
   }
-  .description {
-    white-space: pre-line
+  .video-content .preview .play-btn:hover {
+    opacity: 1;
+    cursor: pointer;
   }
-  .maps-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 0.5em;
-    max-width: 100%;
-  }
-  .maps-container > * {
-    flex: 0 0 33.3333%;
-  }
-  .location-map {
-    width: 100%;
-    max-width: 500px;
-    display: block;
+  .video-content .content table {
+    margin: 1em 0;
   }
   h3 {
     font-family: Helvetica;
