@@ -1,4 +1,5 @@
 <script lang="ts">
+  import {goto} from "$app/navigation";
   import videos from "../routes/videos/videos-content";
   import {onDestroy} from "svelte";
 
@@ -16,17 +17,27 @@
     }
   }, 10000);
 
+  const goHome = () => goto('/');
+
+  const handleKeydown = (e) => {
+    if (e.key === 'Escape' && compact) {
+      goHome();
+    }
+  }
+
   onDestroy(() => clearInterval(intId));
 </script>
 
+<svelte:window on:keydown={handleKeydown}/>
+
 <header class:compact>
-    <div class="content">
-      <a href="/">
-        <h1>Scentographers</h1>
-        <p>an attempt to record and archive scents</p>
-      </a>
-    </div>
-    <div class="header-image" style={`background-image: url("${headerImage}")`}></div>
+  <div class="content">
+    <a href="/">
+      <h1>Scentographers</h1>
+      <p class="payoff">an attempt to record and archive scents</p>
+    </a>
+  </div>
+  <div class="header-image" style={`background-image: url("${headerImage}")`} on:click={goHome}></div>
 </header>
 
 <style>
@@ -45,6 +56,7 @@
     background-size: cover;
     transition: background-image 3s ease-in-out;
     opacity: .7;
+    cursor: pointer;
   }
   header .content {
     font-family: Futura;
@@ -62,20 +74,39 @@
     text-transform: uppercase;
     margin: 0 0 10px;
   }
-  header .content p {
-    color: white;
-    font-style: italic;
+  header .content .payoff {
+    color: var(--color-highlight);
     opacity: .8;
-    font-size: .93em;
     margin: 0;
+    font-family: Futura;
+    text-transform: uppercase;
+    font-size: 3em;
+    filter: blur(2px);
+    max-width: 272px;
+    text-align: justify;
+    line-height: 1em;
+    text-align-last: justify;
+    transition: filter .5s;
+  }
+  header .content .payoff:hover {
+    filter: blur(.3px);
   }
   .compact {
     min-height: 200px;
+  }
+  .compact .content .payoff {
+    font-size: 1.9em;
   }
   .compact .header-image {
     height: 300%;
   }
   .compact .header-image .content {
     transform: translateX(-50%) translateY(-30%);
+  }
+
+  @media only screen and (max-width: 1200px) {
+    header {
+      min-height: 300px;
+    }
   }
 </style>

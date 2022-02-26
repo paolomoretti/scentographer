@@ -85,6 +85,7 @@
     position: absolute;
     height: 100%;
     left: 50%;
+    top: 0;
     transform: translateX(-50%);
   }
   .video-content .preview .play-btn {
@@ -120,5 +121,19 @@
   }
   table tr td:first-child {
     white-space: nowrap;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .video-content {
+      flex-direction: column-reverse;
+      gap: 0;
+      padding: 0;
+    }
+    .video-content .content {
+      padding: 1em;
+    }
+    .video-content .preview {
+      padding-top: 60%;
+    }
   }
 </style>

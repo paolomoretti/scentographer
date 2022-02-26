@@ -8,7 +8,7 @@
 
 <App>
   <div class="the-project">
-    <Header />
+    <Header compact={true} />
     <FullContent>
       <div class="content">
         <h2 class="title">The project</h2>
@@ -40,5 +40,12 @@
     padding: 1em 2em;
     position: relative;
     z-index: 10;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .content {
+      width: 100%;
+      max-width: 100%;
+    }
   }
 </style>
