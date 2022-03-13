@@ -18,6 +18,7 @@
   }, 10000);
 
   const goHome = () => goto('/');
+  const goProject = () => goto('/the-project');
 
   const handleKeydown = (e) => {
     if (e.key === 'Escape' && compact) {
@@ -32,9 +33,9 @@
 
 <header class:compact>
   <div class="content">
-    <a href="/">
-      <h1>Scentographers</h1>
-      <p class="payoff">an attempt to record and archive scents</p>
+    <a>
+      <h1 on:click={goHome}>Scentographers</h1>
+      <p class="payoff scent" on:click={goProject}>an attempt to record and archive scents</p>
     </a>
   </div>
   <div class="header-image" style={`background-image: url("${headerImage}")`} on:click={goHome}></div>
@@ -76,20 +77,14 @@
   }
   header .content .payoff {
     color: var(--color-highlight);
-    opacity: .8;
     margin: 0;
     font-family: Futura;
     text-transform: uppercase;
     font-size: 3em;
-    filter: blur(2px);
     max-width: 272px;
     text-align: justify;
     line-height: 1em;
     text-align-last: justify;
-    transition: filter .5s;
-  }
-  header .content .payoff:hover {
-    filter: blur(.3px);
   }
   .compact {
     min-height: 200px;

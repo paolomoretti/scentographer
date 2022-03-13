@@ -9,7 +9,7 @@
 </script>
 
 <div class="video" on:click={() => openVideo(video)}>
-  <h5 class="scent-label">Scent</h5>
+  <h5 class="scent-label scent">Scent</h5>
   <h2 class="title">
     {video.name}
     <small>{video.year}</small>
@@ -67,7 +67,6 @@
     font-weight: 500;
     z-index: 10;
     color: rgba(241,107,108, .9);
-    transform: skew(18deg, 1deg) rotate3d(71, -82, 7, -3deg);
   }
   .video h2 small {
     display: block;

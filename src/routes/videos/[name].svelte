@@ -25,13 +25,13 @@
           <div class="content">
             <h2 class="title">{video.name}</h2>
 
+            <h4 class="title sub-title">Our memories</h4>
+            <p class="description">{video.memories}</p>
+
             <h4 class="title sub-title">Location</h4>
             <p>
               <strong>{video.year}</strong> - {video.shooting_location}, <u>{video.location}</u>
             </p>
-
-            <h4 class="title sub-title">Our memories</h4>
-            <p class="description">{video.memories}</p>
 
             <h4 class="title sub-title">Equipment</h4>
             <table>

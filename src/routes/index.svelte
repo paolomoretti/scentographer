@@ -30,7 +30,7 @@
         <p align="right"><a><strong>Read more ...</strong></a></p>
       </div>
       <div class="content" on:click={() => openVideo(lastVideo)}>
-        <h5 class="scent-label">Scent</h5>
+        <h5 class="scent-label scent">Scent</h5>
         <h3 class="title">{lastVideo.name}<small>{lastVideo.year}</small></h3>
         <p>
           <strong>{lastVideo.shooting_location}, {lastVideo.location}</strong> <br>
@@ -103,13 +103,12 @@
     font-weight: 200;
   }
   .latest-video .content h5.scent-label {
-    margin: 0;
+    margin: .5em 0 -.5em 0;
     font-size: 0.9em;
     font-family: helvetica;
     font-weight: 500;
     z-index: 10;
     color: white;
-    transform: skew(18deg, 1deg) rotate3d(71, -82, 7, -3deg) translateY(24px) translateX(-10px);
   }
   .latest-video .content h3 small {
     font-size: .6em;
