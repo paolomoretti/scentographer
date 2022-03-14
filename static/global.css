@@ -1,4 +1,10 @@
-@import url(http://db.onlinewebfonts.com/c/da950f2527dc01bebcbedd536e38c145?family=Futura);
+/*@import url(https://db.onlinewebfonts.com/c/da950f2527dc01bebcbedd536e38c145?family=Futura);*/
+@font-face {font-family: "Futura";
+  src: url("/fonts/da950f2527dc01bebcbedd536e38c145.eot");
+  src: url("/fonts/da950f2527dc01bebcbedd536e38c145.eot?#iefix") format("embedded-opentype"),
+  url("/fonts/da950f2527dc01bebcbedd536e38c145.woff2") format("woff2"),
+  url("/fonts/da950f2527dc01bebcbedd536e38c145.ttf") format("truetype")
+}
 
 :root {
   --font-title: Futura;
