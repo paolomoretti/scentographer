@@ -30,6 +30,9 @@
 </script>
 
 <svelte:window on:keydown={handleKeydown}/>
+<svelte:head>
+  <link rel="stylesheet" href="/global.css?rand={parseInt(new Date().getTime() / 60000)}" />
+</svelte:head>
 
 <header class:compact>
   <div class="content">
