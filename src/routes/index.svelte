@@ -86,6 +86,7 @@
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
+    height: 100%;
   }
   .latest-video .content {
     padding: 1em 2em;
