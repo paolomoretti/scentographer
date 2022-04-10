@@ -15,46 +15,50 @@
 </script>
 
 <App>
-<!--  <div>-->
-    <Header compact={true} />
-    {#if showVideo}
-      <Player video={video} onClose={onClose} />
-    {:else}
-      <FullContent>
-        <div class="video-content">
-          <div class="content">
-            <h2 class="title">{video.name}</h2>
+  <!--  <div>-->
+  <Header compact={true} />
+  {#if showVideo}
+    <Player video={video} onClose={onClose} />
+  {:else}
+    <FullContent>
+      <div class="video-content">
+        <div class="content">
+          <h2 class="title">{video.name}</h2>
 
-            <h4 class="title sub-title">Our memories</h4>
-            <p class="description">{video.memories}</p>
+          <h4 class="title sub-title">Our memories</h4>
+          <p class="description">{video.memories}</p>
 
-            <h4 class="title sub-title">Location</h4>
-            <p>
-              <strong>{video.year}</strong> - {video.shooting_location}, <u>{video.location}</u>
-            </p>
+          <h4 class="title sub-title">Location</h4>
+          <p>
+            <strong>{video.year}</strong> - {video.shooting_location}, <u>{video.location}</u>
+          </p>
 
-            <h4 class="title sub-title">Equipment</h4>
-            <table>
-              <tr>
-                <td><strong>Photo shooting</strong></td>
-                <td>{video.equipment.photo}</td>
-              </tr>
-              <tr>
-                <td><strong>Audio recording</strong></td>
-                <td width="100%">{video.equipment.audio}</td>
-              </tr>
-            </table>
+          <h4 class="title sub-title">Equipment</h4>
+          <table>
+            <tr>
+              <td><strong>Photo shooting</strong></td>
+              <td>{video.equipment.photo}</td>
+            </tr>
+            <tr>
+              <td><strong>Audio recording</strong></td>
+              <td width="100%">{video.equipment.audio}</td>
+            </tr>
+          </table>
 
-          </div>
-          <div class="preview">
-            <img src={video.cover} alt={video.name} />
-            <button class="play-btn title" on:click={playVideo}>Play</button>
-          </div>
         </div>
-      </FullContent>
-    {/if}
-    <Footer />
-<!--  </div>-->
+        <div class="preview">
+          <img src={video.cover} alt={video.name} />
+          {#if video.coming_soon}
+            <button class="play-btn shut title">COMING SOON</button>
+          {:else}
+            <button class="play-btn title" on:click={playVideo}>Play</button>
+          {/if}
+        </div>
+      </div>
+    </FullContent>
+  {/if}
+  <Footer />
+  <!--  </div>-->
 </App>
 
 <style>
@@ -100,7 +104,7 @@
     opacity: .7;
     transition: opacity, .3s;
   }
-  .video-content .preview .play-btn:hover {
+  .video-content .preview .play-btn:not(.shut):hover {
     opacity: 1;
     cursor: pointer;
   }
